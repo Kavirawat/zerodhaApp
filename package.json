@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node start-dev.js",
     "start": "node start-dev.js",
+    "build": "cd backend && npm install",
     "backend": "npm --prefix backend run dev",
     "frontend": "npm --prefix frontend run dev",
     "dashboard": "npm --prefix dashboard run dev"
