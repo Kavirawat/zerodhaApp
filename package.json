@@ -1,0 +1,14 @@
+{
+  "name": "zerodha-clone",
+  "version": "1.0.0",
+  "description": "Zerodha Clone with Backend, Frontend, and Dashboard",
+  "scripts": {
+    "dev": "node start-dev.js",
+    "start": "node start-dev.js",
+    "backend": "npm --prefix backend run dev",
+    "frontend": "npm --prefix frontend run dev",
+    "dashboard": "npm --prefix dashboard run dev"
+  },
+  "author": "kavi rawat",
+  "license": "ISC"
+}

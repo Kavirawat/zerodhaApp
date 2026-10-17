@@ -1,0 +1,102 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+.nav-item {
+  margin-left: 40px;
+}
+
+#supportHero {
+  background-color: rgb(56, 126, 209);
+  color: white;
+}
+
+#supportWrapper {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 150px;
+}
+
+body.dark-theme {
+  background-color: #121212 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme h1,
+body.dark-theme h2,
+body.dark-theme h3,
+body.dark-theme h4,
+body.dark-theme h5,
+body.dark-theme h6 {
+  color: #f0f0f0 !important;
+}
+
+body.dark-theme p,
+body.dark-theme li,
+body.dark-theme span:not(.badge):not(.text-primary):not(.text-danger):not(.text-success) {
+  color: #b0b0b0;
+}
+
+body.dark-theme .text-muted {
+  color: #888 !important;
+}
+
+body.dark-theme .border-bottom,
+body.dark-theme .border-top,
+body.dark-theme .border {
+  border-color: #282828 !important;
+}
+
+body.dark-theme .bg-light,
+body.dark-theme .card,
+body.dark-theme .list-group-item {
+  background-color: #1a1a1a !important;
+  border-color: #282828 !important;
+  color: #e0e0e0 !important;
+}
+
+body.dark-theme input.form-control,
+body.dark-theme textarea.form-control,
+body.dark-theme select.form-select {
+  background-color: #202020 !important;
+  border-color: #383838 !important;
+  color: #f0f0f0 !important;
+}
+
+body.dark-theme input.form-control:focus {
+  border-color: #387ed1 !important;
+  box-shadow: 0 0 0 0.25rem rgba(56, 126, 209, 0.25) !important;
+}
+
+body.dark-theme footer {
+  background-color: #161616 !important;
+  border-top: 1px solid #282828 !important;
+}
+
+body.dark-theme footer a {
+  color: #999 !important;
+}
+
+body.dark-theme footer a:hover {
+  color: #387ed1 !important;
+}
+
+body.dark-theme table {
+  color: #ddd !important;
+  border-color: #282828 !important;
+}
+
+body.dark-theme table th,
+body.dark-theme table td {
+  border-color: #282828 !important;
+}
