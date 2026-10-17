@@ -238,7 +238,7 @@ function Navbar() {
                     position: "absolute",
                     top: "48px",
                     right: "0",
-                    width: "270px",
+                    width: "min(280px, calc(100vw - 32px))",
                     backgroundColor: isDarkMode ? "#1e1e1e" : "#fff",
                     borderRadius: "10px",
                     border: isDarkMode ? "1px solid #333" : "1px solid #eef0f3",

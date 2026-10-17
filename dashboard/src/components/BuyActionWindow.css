@@ -1,17 +1,37 @@
-.container {
-    --radius: 4px;
-    width: 40%;
-    height: 63%;
-    background: rgb(245, 245, 245);
-    position: absolute;
-    bottom: 0;
-    left: 35%;
-    cursor: move;
-    box-sizing: border-box;
-    z-index: 100;
-    border-radius: var(--radius);
-    border: 1px solid rgb(238, 238, 238);
+#buy-window,
+.container#buy-window {
+  --radius: 8px;
+  width: 420px;
+  max-width: 90vw;
+  height: auto;
+  min-height: 280px;
+  background: rgb(245, 245, 245);
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  left: auto;
+  cursor: default;
+  box-sizing: border-box;
+  z-index: 1500;
+  border-radius: var(--radius);
+  border: 1px solid rgb(220, 220, 220);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  #buy-window,
+  .container#buy-window {
+    width: 92% !important;
+    max-width: 400px !important;
+    left: 50% !important;
+    right: auto !important;
+    transform: translateX(-50%) !important;
+    bottom: 65px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4) !important;
   }
+}
   
   .dragging {
     opacity: 0;

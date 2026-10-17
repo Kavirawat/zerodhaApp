@@ -4,15 +4,22 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LogoutOutlinedIcon from "@mui/icons-material/LogoutOutlined";
 import DarkModeOutlinedIcon from "@mui/icons-material/DarkModeOutlined";
 import LightModeOutlinedIcon from "@mui/icons-material/LightModeOutlined";
+import MenuIcon from "@mui/icons-material/Menu";
+import CloseIcon from "@mui/icons-material/Close";
 import { FRONTEND_URL } from "../config";
 
 const Menu = () => {
   const [isProfileDropdownOpen, setIsProfileDropdownOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [user, setUser] = useState(null);
   const [isDarkMode, setIsDarkMode] = useState(() => {
     return localStorage.getItem("zerodha_theme") === "dark";
   });
   const location = useLocation();
+
+  useEffect(() => {
+    setIsMobileMenuOpen(false);
+  }, [location.pathname]);
 
   useEffect(() => {
     if (isDarkMode) {
@@ -107,9 +114,11 @@ const Menu = () => {
 
   return (
     <div className="menu-container">
-      <img src="logo.png" style={{ width: "50px" }} alt="logo" />
+      <Link to="/" style={{ display: "flex", alignItems: "center" }}>
+        <img src="logo.png" style={{ width: "42px", height: "auto" }} alt="logo" />
+      </Link>
       <div className="menus">
-        <ul>
+        <ul className="desktop-menu-list">
           <li>
             <Link style={{ textDecoration: "none" }} to="/">
               <p className={isActive("/") ? activeMenuClass : menuClass}>
@@ -153,7 +162,7 @@ const Menu = () => {
             </Link>
           </li>
         </ul>
-        <hr />
+        <hr className="desktop-hr" />
         <div style={{ position: "relative" }} ref={dropdownRef}>
           <div className="profile" onClick={handleProfileClick} style={{ cursor: "pointer" }}>
             <div
@@ -356,7 +365,42 @@ const Menu = () => {
             </div>
           )}
         </div>
+
+        <button
+          className="mobile-hamburger-btn"
+          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+          aria-label="Toggle navigation"
+        >
+          {isMobileMenuOpen ? <CloseIcon style={{ fontSize: "24px" }} /> : <MenuIcon style={{ fontSize: "24px" }} />}
+        </button>
       </div>
+
+      {isMobileMenuOpen && (
+        <div className="mobile-nav-drawer">
+          <Link to="/" onClick={() => setIsMobileMenuOpen(false)} className={`mobile-nav-link ${isActive("/") ? "active" : ""}`}>
+            📊 Dashboard
+          </Link>
+          <Link to="/orders" onClick={() => setIsMobileMenuOpen(false)} className={`mobile-nav-link ${isActive("/orders") ? "active" : ""}`}>
+            📑 Orders
+          </Link>
+          <Link to="/holdings" onClick={() => setIsMobileMenuOpen(false)} className={`mobile-nav-link ${isActive("/holdings") ? "active" : ""}`}>
+            💼 Holdings
+          </Link>
+          <Link to="/positions" onClick={() => setIsMobileMenuOpen(false)} className={`mobile-nav-link ${isActive("/positions") ? "active" : ""}`}>
+            📈 Positions
+          </Link>
+          <Link to="/funds" onClick={() => setIsMobileMenuOpen(false)} className={`mobile-nav-link ${isActive("/funds") ? "active" : ""}`}>
+            💰 Funds
+          </Link>
+          <Link to="/apps" onClick={() => setIsMobileMenuOpen(false)} className={`mobile-nav-link ${isActive("/apps") ? "active" : ""}`}>
+            📱 Apps
+          </Link>
+          <hr style={{ margin: "8px 0", borderColor: isDarkMode ? "#333" : "#eee" }} />
+          <a href={FRONTEND_URL} className="mobile-nav-link" style={{ color: "#387ed1" }}>
+            🏠 Return to Main Website
+          </a>
+        </div>
+      )}
     </div>
   );
 };

@@ -2,11 +2,11 @@ import React from "react";
 function CreateTicket() {
   return (
     <div className="container">
-      <div className="row p-5 mt-5 mb-5">
-        <h1 className="fs-4 text-center text-muted">
+      <div className="row p-2 p-md-5 my-3 my-md-5">
+        <h1 className="fs-3 text-center text-muted mb-4">
           To create a ticket, select a relevant topic
         </h1>
-        <div className="col-4 mt-3 p-3">
+        <div className="col-12 col-sm-6 col-lg-4 mt-3 p-3">
           <h3 className="fs-5  text-muted p-3">
             <i class="fa fa-plus-circle" aria-hidden="true"></i>&nbsp;Account
             Opening
@@ -43,7 +43,7 @@ function CreateTicket() {
             Getting Started
           </a>
         </div>
-        <div className="col-4 mt-3 p-3">
+        <div className="col-12 col-sm-6 col-lg-4 mt-3 p-3">
           <h3 className="fs-5  text-muted p-3">
             <i class="fa fa-user" aria-hidden="true"></i>&nbsp;Your Zerodha
             Account
@@ -68,7 +68,7 @@ function CreateTicket() {
             Transfer and conversion of Shares
           </a>
         </div>
-        <div className="col-4 mt-3 p-3">
+        <div className="col-12 col-sm-6 col-lg-4 mt-3 p-3">
           <h3 className="fs-5 text-muted p-3">
             <i class="fa fa-bar-chart" aria-hidden="true"></i>&nbsp;Your Zerodha
             Account
@@ -97,7 +97,7 @@ function CreateTicket() {
             General
           </a>
         </div>
-        <div className="col-4 mt-3 p-3">
+        <div className="col-12 col-sm-6 col-lg-4 mt-3 p-3">
           <h3 className="fs-5  text-muted p-3">
             <i class="fa fa-address-book-o" aria-hidden="true"></i>&nbsp; Found
           </h3>
@@ -117,7 +117,7 @@ function CreateTicket() {
             eMandates
           </a>
         </div>
-        <div className="col-4 mt-3 p-3">
+        <div className="col-12 col-sm-6 col-lg-4 mt-3 p-3">
           <h3 className="fs-5 text-muted p-3">
             <i class="fa fa-circle-o-notch" aria-hidden="true"></i>&nbsp;Console
           </h3>
@@ -145,7 +145,7 @@ function CreateTicket() {
             Segments
           </a>
         </div>
-        <div className="col-4 mt-3 p-3">
+        <div className="col-12 col-sm-6 col-lg-4 mt-3 p-3">
           <h3 className="fs-5 text-muted p-3">
             <i class="fa fa-circle-thin" aria-hidden="true"></i>&nbsp;Coin
           </h3>

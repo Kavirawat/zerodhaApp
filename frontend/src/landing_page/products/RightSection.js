@@ -7,11 +7,11 @@ function RightSection({
   learnMore,
 }) {
   return (
-    <div className="container mt-5">
+    <div className="container my-3 my-md-5">
       <div className="row align-items-center">
-        <div className="col-12 col-md-6 mt-4 p-4">
-          <h1 className="fs-3 text-muted">{productName}</h1>
-          <p className="text-muted">{productDescription}</p>
+        <div className="col-12 col-md-6 order-2 order-md-1 p-2 p-md-4">
+          <h2 className="fs-3 text-muted mb-3">{productName}</h2>
+          <p className="text-muted mb-3">{productDescription}</p>
           <div className="mb-3">
             <a
               href={learnMore}
@@ -24,8 +24,8 @@ function RightSection({
             </a>
           </div>
         </div>
-        <div className="col-12 col-md-6 text-center">
-          <img src={imageUrl} alt={productName} style={{ maxWidth: "100%", height: "auto" }} />
+        <div className="col-12 col-md-6 order-1 order-md-2 text-center mb-4 mb-md-0">
+          <img src={imageUrl} alt={productName} className="img-fluid" style={{ maxHeight: "360px", objectFit: "contain" }} />
         </div>
       </div>
     </div>

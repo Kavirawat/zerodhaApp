@@ -3,25 +3,25 @@ import React from "react";
 function Team() {
   return (
     <div className="container">
-      <div className="row p-5 mb-5 border-top">
-        <h1 className="text-center mb-5 fs-2">People</h1>
-        <div className="col-12 col-md-6 text-center">
+      <div className="row p-3 p-md-5 mb-3 mb-md-5 border-top align-items-center">
+        <h1 className="text-center mb-4 mb-md-5 fs-2">People</h1>
+        <div className="col-12 col-md-6 text-center mb-4 mb-md-0">
           <img
-            className="p-3"
+            className="p-2 img-fluid"
             src="/Media/Images/kavi.JPG"
             alt="Kavi Rawat"
             onError={(e) => {
               e.target.onerror = null;
               e.target.src = "/Media/Images/nithinKamath.jpg";
             }}
-            style={{ width: "60%", maxWidth: "320px", borderRadius: "100%", objectFit: "cover" }}
+            style={{ width: "65%", maxWidth: "260px", borderRadius: "100%", objectFit: "cover", aspectRatio: "1/1" }}
           />
-          <h4 className="mt-2 fs-4 text-muted">Kavi Rawat</h4>
+          <h4 className="mt-3 fs-4 text-muted">Kavi Rawat</h4>
           <h5 className="fs-6 text-muted">
             Founder & Software Engineer
           </h5>
         </div>
-        <div className="col-12 col-md-6 p-4 fs-5 text-muted">
+        <div className="col-12 col-md-6 p-2 p-md-4 fs-5 text-muted">
           <p>
             Kavi bootstrapped and built this Zerodha full-stack platform to overcome the
             hurdles traders face with high brokerage, clunky interfaces, and fragmented tools.

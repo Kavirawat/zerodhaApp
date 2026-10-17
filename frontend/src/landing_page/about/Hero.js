@@ -3,17 +3,17 @@ import React from "react";
 function Hero() {
   return (
     <div className="container">
-      <div className="row p-5 mt-5 mb-5">
-        <h1 className="fs-4 text-center text-muted">
+      <div className="row p-3 p-md-5 my-3 my-md-5">
+        <h1 className="fs-3 fs-md-4 text-center text-muted">
           We pioneered the discount broking model in India. <br /> Now, we are
           breaking ground with our technology.
         </h1>
       </div>
       <div
-        className="row p-5 mt-5 border-top text-muted fs-6"
-        style={{ lineHeight: "1.8", fontSize: "1.2em" }}
+        className="row p-2 p-md-5 mt-3 mt-md-5 border-top text-muted fs-6"
+        style={{ lineHeight: "1.8", fontSize: "1.1em" }}
       >
-        <div className="col-12 col-md-6 p-4">
+        <div className="col-12 col-md-6 p-2 p-md-4">
           <p>
             We kick-started operations on the 15th of August, 2010 with the goal
             of breaking all barriers that traders and investors face in India in

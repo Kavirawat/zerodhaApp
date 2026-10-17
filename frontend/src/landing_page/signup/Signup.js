@@ -104,20 +104,20 @@ function Signup({ initialMode = "signup" }) {
   };
 
   return (
-    <div className="container p-5 mt-4 mb-5">
+    <div className="container p-2 p-md-4 my-3 my-md-5">
       <div className="row align-items-center">
         
-        <div className="col-md-7 text-center p-4">
+        <div className="col-12 col-lg-7 text-center p-2 p-md-4 mb-4 mb-lg-0">
           <img
             src="Media/Images/signup.png"
             alt="Zerodha Signup"
-            style={{ width: "90%", maxWidth: "520px" }}
+            className="img-fluid"
+            style={{ maxHeight: "380px", objectFit: "contain" }}
             onError={(e) => {
-              
               e.target.style.display = "none";
             }}
           />
-          <h2 className="mt-4 fs-3 text-muted">
+          <h2 className="mt-3 mt-md-4 fs-3 text-muted">
             {isLogin ? "Welcome Back to Zerodha" : "Open a free Zerodha Demat and trading account"}
           </h2>
           <p className="text-muted fs-6">
@@ -125,9 +125,9 @@ function Signup({ initialMode = "signup" }) {
           </p>
         </div>
 
-        <div className="col-md-5 p-4">
+        <div className="col-12 col-lg-5 p-2 p-md-3">
           <div
-            className="card shadow-sm p-4 border-0"
+            className="card shadow-sm p-3 p-md-4 border-0"
             style={{ borderRadius: "12px", backgroundColor: "#fff" }}
           >
             {currentUser ? (

@@ -5,164 +5,134 @@ function Footer() {
       className="border-top "
       style={{ backgroundColor: "rgb(250,250,250)" }}
     >
-      <div className="container mt-5">
+      <div className="container mt-4 mt-md-5">
         <div className="row">
-          <div className="col">
-            <a class="navbar-brand" href="#">
-              <img src="Media/Images/logo.svg" style={{ width: "50%" }} />
-              <p>
-                &copy; 2010 - 2025, Zerodha Broking Ltd. All rights reserved.
-              </p>
+          <div className="col-12 col-md-4 col-lg-3 mb-4 mb-lg-0">
+            <a className="navbar-brand d-block mb-3" href="#">
+              <img src="Media/Images/logo.svg" alt="Zerodha" style={{ width: "130px", maxWidth: "60%" }} />
             </a>
-            <div>
+            <p className="text-muted small">
+              &copy; 2010 - 2025, Zerodha Broking Ltd. All rights reserved.
+            </p>
+            <div className="d-flex gap-3 mt-3">
               <i
-                style={{ fontSize: "40px", marginLeft: "14px" }}
-                class="fa fa-facebook-official"
+                style={{ fontSize: "28px" }}
+                className="fa fa-facebook-official text-muted"
                 aria-hidden="true"
               ></i>
               <i
-                style={{ fontSize: "40px", marginLeft: "14px" }}
-                class="fa fa-instagram"
+                style={{ fontSize: "28px" }}
+                className="fa fa-instagram text-muted"
                 aria-hidden="true"
               ></i>
               <i
-                style={{ fontSize: "40px", marginLeft: "14px" }}
-                class="fa fa-linkedin"
+                style={{ fontSize: "28px" }}
+                className="fa fa-linkedin text-muted"
                 aria-hidden="true"
               ></i>
             </div>
           </div>
-          <div className="col">
+          <div className="col-6 col-sm-6 col-md-4 col-lg-2 mb-4 mb-lg-0">
             <h6>Account</h6>
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Open demat account
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Minor demat account
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               NRI demat account
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Commodity
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Dematerialisation
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Fund transfer
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               MTF
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Referral program
             </a>
-            <br />
           </div>
-          <div className="col">
+          <div className="col-6 col-sm-6 col-md-4 col-lg-2 mb-4 mb-lg-0">
             <h6>Support</h6>
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Contact us
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Support portal
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               How to file a complaint?
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
-              Status of your complaints
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
+              Status of complaints
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Bulletin
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Circular
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Z-Connect blog
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Downloads
             </a>
-            <br />
           </div>
-          <div className="col">
+          <div className="col-6 col-sm-6 col-md-4 col-lg-2 mb-4 mb-lg-0">
             <h6>Company</h6>
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               About
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Philosophy
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Press & media
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Careers
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Zerodha Cares (CSR)
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Zerodha.tech
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Open source
             </a>
-            <br />
           </div>
-          <div className="col">
+          <div className="col-6 col-sm-6 col-md-4 col-lg-3 mb-4 mb-lg-0">
             <h6>Quick links</h6>
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Upcoming IPOs
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Brokerage charges
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Market holidays
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Economic calendar
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Calculators
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted">
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Markets
             </a>
-            <br />
-            <a style={{ textDecoration: "none" }} href="#" className="text-muted" >
+            <a style={{ textDecoration: "none" }} href="#" className="text-muted d-block mb-1">
               Sectors
             </a>
-            <br />
           </div>
         </div>
         <div className="mt-5 text-muted" style={{ fontSize: "14px" }}>
@@ -219,36 +189,37 @@ function Footer() {
             of allotment. In case of non allotment the funds will remain in your
             bank account. As a business we don't give stock tips, and have not
             authorized anyone to trade on behalf of others. If you find anyone
-            claiming to be part of Zerodha and offering such services, please
-            <a href="#" style={{ textDecoration: "none" }}>create a ticket here</a>
+            <a href="#" style={{ textDecoration: "none" }}>create a ticket here</a>.
           </p>
-          <a href="#" style={{ marginLeft: "20px", textDecoration: "none" }}>
-            NSE
-          </a>
-          <a href="#" style={{ marginLeft: "20px", textDecoration: "none" }}>
-            BSE
-          </a>
-          <a href="#" style={{ marginLeft: "20px", textDecoration: "none" }}>
-            MCX
-          </a>
-          <a href="#" style={{ marginLeft: "20px", textDecoration: "none" }}>
-            Terms & condition
-          </a>
-          <a href="#" style={{ marginLeft: "20px", textDecoration: "none" }}>
-            Policies & procedures
-          </a>
-          <a href="#" style={{ marginLeft: "20px", textDecoration: "none" }}>
-            Privacy & Policy
-          </a>
-          <a href="#" style={{ marginLeft: "20px", textDecoration: "none" }}>
-            Disclosure
-          </a>
-          <a href="#" style={{ marginLeft: "20px", textDecoration: "none" }}>
-            For investor's attention{" "}
-          </a>
-          <a href="#" style={{ marginLeft: "20px", textDecoration: "none" }}>
-            Investor charter
-          </a>
+          <div className="d-flex flex-wrap gap-3 mt-4 pt-2 border-top">
+            <a href="#" className="text-muted" style={{ textDecoration: "none" }}>
+              NSE
+            </a>
+            <a href="#" className="text-muted" style={{ textDecoration: "none" }}>
+              BSE
+            </a>
+            <a href="#" className="text-muted" style={{ textDecoration: "none" }}>
+              MCX
+            </a>
+            <a href="#" className="text-muted" style={{ textDecoration: "none" }}>
+              Terms & condition
+            </a>
+            <a href="#" className="text-muted" style={{ textDecoration: "none" }}>
+              Policies & procedures
+            </a>
+            <a href="#" className="text-muted" style={{ textDecoration: "none" }}>
+              Privacy & Policy
+            </a>
+            <a href="#" className="text-muted" style={{ textDecoration: "none" }}>
+              Disclosure
+            </a>
+            <a href="#" className="text-muted" style={{ textDecoration: "none" }}>
+              For investor's attention
+            </a>
+            <a href="#" className="text-muted" style={{ textDecoration: "none" }}>
+              Investor charter
+            </a>
+          </div>
         </div>
       </div>
     </footer>

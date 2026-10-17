@@ -1,10 +1,10 @@
 import React from "react";
 function Stats() {
   return (
-    <div className="container p-3">
-      <div className="row p-5">
-        <div className="col-6 p-5">
-          <h1 className="mb-5 fs-2">Trust with confidence</h1>
+    <div className="container p-2 p-md-3">
+      <div className="row p-2 p-md-5 align-items-center">
+        <div className="col-12 col-lg-6 p-2 p-md-4 mb-4 mb-lg-0">
+          <h1 className="mb-4 mb-md-5 fs-2">Trust with confidence</h1>
           <h2 className="fs-4">Customer-first always</h2>
           <p className="text-muted">
             That's why 1.6+ crore customers trust Zerodha with ~ ₹6 lakh crores
@@ -29,16 +29,16 @@ function Stats() {
             money.
           </p>
         </div>
-        <div className="col-6 p-5 ">
-          <img src="Media/Images/ecosystem.png" style={{ width: "100%" }} />
-          <div className="text-center">
-            <a href="#" className="mx-5" style={{ textDecoration: "none" }}>
+        <div className="col-12 col-lg-6 p-2 p-md-4 text-center">
+          <img src="Media/Images/ecosystem.png" alt="Zerodha Ecosystem" className="img-fluid mb-4" style={{ maxWidth: "100%" }} />
+          <div className="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
+            <a href="/products" style={{ textDecoration: "none", color: "#387ed1", fontWeight: 500 }}>
               Explore our products &nbsp;
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="#" style={{ textDecoration: "none" }}>
+            <a href="#" style={{ textDecoration: "none", color: "#387ed1", fontWeight: 500 }}>
               Try Kite demo &nbsp;
-              <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>

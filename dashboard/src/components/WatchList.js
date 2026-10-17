@@ -132,7 +132,12 @@ const WatchListItem = ({ stock }) => {
       : stock.percent || "0.00%";
 
   return (
-    <li onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <li
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      onClick={() => setShowWatchlistActions((prev) => !prev)}
+      style={{ cursor: "pointer" }}
+    >
       <div className="item">
         <p className={isDown ? "down" : "up"}>{stock.name}</p>
         <div className="itemInfo">
@@ -157,14 +162,15 @@ const WatchListItem = ({ stock }) => {
 const WatchListActions = ({ uid, price }) => {
   const generalContext = useContext(GeneralContext);
 
-  const handleBuyClick = () => {
+  const handleBuyClick = (e) => {
+    if (e && e.stopPropagation) e.stopPropagation();
     if (generalContext && generalContext.openBuyWindow) {
       generalContext.openBuyWindow(uid);
     }
   };
 
   return (
-    <span className="actions">
+    <span className="actions" onClick={(e) => e.stopPropagation()}>
       <span>
         <Tooltip
           title="Buy (B)"
@@ -173,7 +179,7 @@ const WatchListActions = ({ uid, price }) => {
           TransitionComponent={Grow}
           onClick={handleBuyClick}
         >
-          <button className="buy">Buy</button>
+          <button className="buy" onClick={handleBuyClick}>Buy</button>
         </Tooltip>
         <Tooltip
           title="Sell (S)"
@@ -182,7 +188,7 @@ const WatchListActions = ({ uid, price }) => {
           TransitionComponent={Grow}
           onClick={handleBuyClick}
         >
-          <button className="sell">Sell</button>
+          <button className="sell" onClick={handleBuyClick}>Sell</button>
         </Tooltip>
         <Tooltip
           title="Analytics (A)"
