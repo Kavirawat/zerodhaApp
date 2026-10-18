@@ -57,6 +57,30 @@ body.dark-theme {
   color: #e0e0e0 !important;
 }
 
+body.dark-theme .navbar {
+  background-color: #181818 !important;
+  border-color: #282828 !important;
+}
+
+body.dark-theme .navbar .nav-link,
+body.dark-theme .navbar .nav-item a,
+body.dark-theme .navbar-nav .nav-link {
+  color: #ffffff !important;
+}
+
+body.dark-theme .navbar .nav-link:hover,
+body.dark-theme .navbar-nav .nav-link:hover {
+  color: #387ed1 !important;
+}
+
+body.dark-theme .navbar-toggler {
+  border-color: #444 !important;
+}
+
+body.dark-theme .navbar-toggler-icon {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
 body.dark-theme h1,
 body.dark-theme h2,
 body.dark-theme h3,

@@ -30,6 +30,7 @@ export const getDashboardUrl = (subPath = "/") => {
   const currentOrigin = typeof window !== "undefined" ? window.location.origin : PRODUCTION_FRONTEND_URL;
   const frontendParam = encodeURIComponent(currentOrigin);
   const base = DASHBOARD_URL.endsWith("/") ? DASHBOARD_URL.slice(0, -1) : DASHBOARD_URL;
-  const path = subPath ? (subPath.startsWith("/") ? subPath : `/${subPath}`) : "/";
-  return `${base}${path}?token=${token}&user=${user}&frontend=${frontendParam}`;
+  const cleanSubPath = subPath ? (subPath.startsWith("/") ? subPath : `/${subPath}`) : "/";
+  const routeParam = encodeURIComponent(cleanSubPath);
+  return `${base}/?route=${routeParam}&token=${token}&user=${user}&frontend=${frontendParam}`;
 };

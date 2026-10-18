@@ -98,8 +98,8 @@ function Navbar() {
   const getLinkStyle = (path) => {
     const active = isActive(path);
     return {
-      color: active ? "#387ed1" : (isDarkMode ? "#b0b0b0" : "rgb(102, 102, 102)"),
-      fontWeight: active ? "600" : "400",
+      color: active ? "#387ed1" : (isDarkMode ? "#ffffff" : "rgb(102, 102, 102)"),
+      fontWeight: active ? "600" : "500",
       textDecoration: "none",
       transition: "color 0.2s ease",
     };
@@ -229,7 +229,7 @@ function Navbar() {
                   style={{
                     fontSize: "13px",
                     fontWeight: 600,
-                    color: isDarkMode ? "#e0e0e0" : "#444",
+                    color: isDarkMode ? "#ffffff" : "#444",
                     maxWidth: "90px",
                     overflow: "hidden",
                     textOverflow: "ellipsis",
@@ -241,7 +241,7 @@ function Navbar() {
 
                 <i
                   className={`fas fa-chevron-${isProfileOpen ? "up" : "down"} ms-2`}
-                  style={{ fontSize: "11px", color: isDarkMode ? "#aaa" : "#888" }}
+                  style={{ fontSize: "11px", color: isDarkMode ? "#ffffff" : "#888" }}
                 ></i>
               </div>
 

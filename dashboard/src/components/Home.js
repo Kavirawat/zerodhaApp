@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Dashboard from "./Dashboard";
 import TopBar from "./TopBar";
 import { getFrontendUrl } from "../config";
@@ -6,6 +7,7 @@ import { getFrontendUrl } from "../config";
 const Home = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [checkingAuth, setCheckingAuth] = useState(true);
+  const navigate = useNavigate();
 
   useEffect(() => {
     // 0. Sanitize stale localhost values when running in production
@@ -25,6 +27,7 @@ const Home = () => {
     const tokenFromUrl = urlParams.get("token");
     const userFromUrl = urlParams.get("user");
     const frontendFromUrl = urlParams.get("frontend");
+    const routeFromUrl = urlParams.get("route") || urlParams.get("redirect");
 
     if (frontendFromUrl) {
       try {
@@ -43,10 +46,14 @@ const Home = () => {
         if (userFromUrl) {
           localStorage.setItem("zerodha_user", decodeURIComponent(userFromUrl));
         }
-        // Remove query params from the browser address bar cleanly
-        window.history.replaceState({}, document.title, window.location.pathname);
         setIsAuthenticated(true);
         setCheckingAuth(false);
+        if (routeFromUrl && routeFromUrl !== "/") {
+          const cleanRoute = decodeURIComponent(routeFromUrl);
+          navigate(cleanRoute, { replace: true });
+        } else {
+          window.history.replaceState({}, document.title, window.location.pathname);
+        }
         return;
       } catch (err) {
         console.error("Error setting session from URL:", err);
@@ -58,6 +65,10 @@ const Home = () => {
     if (savedToken) {
       setIsAuthenticated(true);
       setCheckingAuth(false);
+      if (routeFromUrl && routeFromUrl !== "/") {
+        const cleanRoute = decodeURIComponent(routeFromUrl);
+        navigate(cleanRoute, { replace: true });
+      }
       return;
     }
 
@@ -66,7 +77,7 @@ const Home = () => {
     setIsAuthenticated(false);
     const targetLogin = `${getFrontendUrl()}/login`;
     window.location.replace(targetLogin);
-  }, []);
+  }, [navigate]);
 
   if (checkingAuth) {
     return (

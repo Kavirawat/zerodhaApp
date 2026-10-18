@@ -138,19 +138,6 @@ const Menu = () => {
       <div className="menus">
         <ul className="desktop-menu-list">
           <li>
-            <a
-              href={frontendUrl}
-              onClick={handleReturnHome}
-              style={{ textDecoration: "none" }}
-              title="Home"
-            >
-              <p className={menuClass} style={{ display: "flex", alignItems: "center" }}>
-                <i className="fas fa-home" style={{ marginRight: "6px" }}></i>
-                Home
-              </p>
-            </a>
-          </li>
-          <li>
             <Link style={{ textDecoration: "none" }} to="/">
               <p className={isActive("/") ? activeMenuClass : menuClass} style={{ display: "flex", alignItems: "center" }}>
                 <i className="fas fa-tachometer-alt" style={{ marginRight: "6px" }}></i>
@@ -407,17 +394,6 @@ const Menu = () => {
             </div>
           )}
         </div>
-
-        {/* Mobile Top Home Button */}
-        <a
-          href={frontendUrl}
-          onClick={handleReturnHome}
-          className="mobile-top-home-btn"
-          title="Home"
-        >
-          <i className="fas fa-home"></i>
-          <span>Home</span>
-        </a>
 
         <button
           className="mobile-hamburger-btn"

@@ -863,11 +863,15 @@ body.dark-theme .menu-container {
 }
 
 body.dark-theme .menu {
-  color: #b0b0b0;
+  color: #ffffff !important;
+}
+
+body.dark-theme .menu:hover {
+  color: #4dabf7 !important;
 }
 
 body.dark-theme .menu.selected {
-  color: #387ed1;
+  color: #387ed1 !important;
 }
 
 body.dark-theme hr {
@@ -875,7 +879,7 @@ body.dark-theme hr {
 }
 
 body.dark-theme .profile .username {
-  color: #e0e0e0;
+  color: #ffffff !important;
 }
 
 body.dark-theme .watchlist-container {
@@ -1252,7 +1256,7 @@ body.dark-theme #buy-window input {
   }
 
   body.dark-theme .mobile-hamburger-btn {
-    color: #e0e0e0;
+    color: #ffffff !important;
   }
 
   /* Mobile Nav Drawer */
@@ -1295,12 +1299,12 @@ body.dark-theme #buy-window input {
   }
 
   body.dark-theme .mobile-nav-link {
-    color: #ddd;
+    color: #ffffff !important;
   }
 
   body.dark-theme .mobile-nav-link.active {
     background: #182638;
-    color: #4dabf7;
+    color: #4dabf7 !important;
   }
 
   /* Mobile Top Segmented Toggle (Watchlist vs Content) */
@@ -1456,14 +1460,26 @@ body.dark-theme #buy-window input {
   }
 
   body.dark-theme .bottom-nav-item {
-    color: #888;
+    color: #ffffff !important;
+  }
+
+  body.dark-theme .bottom-nav-item span {
+    color: #ffffff !important;
   }
 
   body.dark-theme .bottom-nav-item.home-nav-item {
-    color: #4dabf7;
+    color: #4dabf7 !important;
+  }
+
+  body.dark-theme .bottom-nav-item.home-nav-item span {
+    color: #4dabf7 !important;
   }
 
   body.dark-theme .bottom-nav-item.active {
+    color: #4dabf7 !important;
+  }
+
+  body.dark-theme .bottom-nav-item.active span {
     color: #4dabf7 !important;
   }
 
