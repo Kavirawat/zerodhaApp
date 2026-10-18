@@ -1125,6 +1125,10 @@ body.dark-theme #buy-window input {
   display: none;
 }
 
+.mobile-top-home-btn {
+  display: none;
+}
+
 .mobile-hamburger-btn {
   display: none;
 }
@@ -1197,6 +1201,40 @@ body.dark-theme #buy-window input {
   .nifty, .sensex {
     flex-basis: 48%;
     justify-content: center;
+  }
+
+  /* Mobile Top Home Button */
+  .mobile-top-home-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 5px 9px;
+    background: #eef5ff;
+    color: #387ed1;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    margin-left: 6px;
+    border: 1px solid #d4e4fc;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .mobile-top-home-btn:hover {
+    background: #dbeafe;
+    color: #2b6cb0;
+  }
+
+  body.dark-theme .mobile-top-home-btn {
+    background: #182638;
+    color: #4dabf7;
+    border-color: #1f3d63;
+  }
+
+  body.dark-theme .mobile-top-home-btn:hover {
+    background: #1f3552;
+    color: #70bdfa;
   }
 
   /* Mobile Hamburger Button */
@@ -1378,23 +1416,38 @@ body.dark-theme #buy-window input {
 
   .bottom-nav-item {
     flex: 1;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     background: none;
     border: none;
-    padding: 4px 2px;
+    padding: 3px 1px;
     color: #777;
     cursor: pointer;
     text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .bottom-nav-item i {
+    font-size: 15px;
   }
 
   .bottom-nav-item span {
-    font-size: 10px;
+    font-size: 9px;
     margin-top: 2px;
     font-weight: 500;
     white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .bottom-nav-item.home-nav-item {
+    color: #387ed1;
+    font-weight: 600;
   }
 
   .bottom-nav-item.active {
@@ -1404,6 +1457,10 @@ body.dark-theme #buy-window input {
 
   body.dark-theme .bottom-nav-item {
     color: #888;
+  }
+
+  body.dark-theme .bottom-nav-item.home-nav-item {
+    color: #4dabf7;
   }
 
   body.dark-theme .bottom-nav-item.active {

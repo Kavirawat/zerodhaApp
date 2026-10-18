@@ -142,7 +142,7 @@ const Menu = () => {
               href={frontendUrl}
               onClick={handleReturnHome}
               style={{ textDecoration: "none" }}
-              title="Return to Main Website"
+              title="Home"
             >
               <p className={menuClass} style={{ display: "flex", alignItems: "center" }}>
                 <i className="fas fa-home" style={{ marginRight: "6px" }}></i>
@@ -177,7 +177,7 @@ const Menu = () => {
           <li>
             <Link style={{ textDecoration: "none" }} to="/positions">
               <p className={isActive("/positions") ? activeMenuClass : menuClass} style={{ display: "flex", alignItems: "center" }}>
-                <i className="fas fa-chart-line" style={{ marginRight: "6px" }}></i>
+                <i className="fas fa-layer-group" style={{ marginRight: "6px" }}></i>
                 Positions
               </p>
             </Link>
@@ -408,6 +408,17 @@ const Menu = () => {
           )}
         </div>
 
+        {/* Mobile Top Home Button */}
+        <a
+          href={frontendUrl}
+          onClick={handleReturnHome}
+          className="mobile-top-home-btn"
+          title="Home"
+        >
+          <i className="fas fa-home"></i>
+          <span>Home</span>
+        </a>
+
         <button
           className="mobile-hamburger-btn"
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -445,7 +456,7 @@ const Menu = () => {
             Holdings
           </Link>
           <Link to="/positions" onClick={() => setIsMobileMenuOpen(false)} className={`mobile-nav-link ${isActive("/positions") ? "active" : ""}`}>
-            <i className="fas fa-chart-line" style={{ width: "22px", textAlign: "center", marginRight: "10px", color: isActive("/positions") ? "#387ed1" : "inherit" }}></i>
+            <i className="fas fa-layer-group" style={{ width: "22px", textAlign: "center", marginRight: "10px", color: isActive("/positions") ? "#387ed1" : "inherit" }}></i>
             Positions
           </Link>
           <Link to="/funds" onClick={() => setIsMobileMenuOpen(false)} className={`mobile-nav-link ${isActive("/funds") ? "active" : ""}`}>

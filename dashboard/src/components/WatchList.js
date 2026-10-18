@@ -70,13 +70,25 @@ const WatchList = () => {
   return (
     <div className="watchlist-container">
       
-      <div className="search-container">
+      <div className="search-container" style={{ position: "relative", display: "flex", alignItems: "center" }}>
+        <i
+          className="fas fa-search"
+          style={{
+            position: "absolute",
+            left: "14px",
+            color: "#888",
+            fontSize: "13px",
+            pointerEvents: "none",
+            zIndex: 1,
+          }}
+        ></i>
         <input
           type="text"
           name="search"
           id="search"
           placeholder="Search eg: infy, bse, nifty, tcs, reliance"
           className="search"
+          style={{ paddingLeft: "36px" }}
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
@@ -87,11 +99,13 @@ const WatchList = () => {
 
       <ul className="list">
         {loading && stocks.length === 0 ? (
-          <li style={{ padding: "20px", color: "#888", fontSize: "13px", textAlign: "center" }}>
+          <li style={{ padding: "24px", color: "#888", fontSize: "13px", textAlign: "center" }}>
+            <i className="fas fa-circle-notch fa-spin" style={{ marginRight: "8px", color: "#387ed1" }}></i>
             Loading live market data...
           </li>
         ) : filteredStocks.length === 0 ? (
-          <li style={{ padding: "20px", color: "#888", fontSize: "13px", textAlign: "center" }}>
+          <li style={{ padding: "24px", color: "#888", fontSize: "13px", textAlign: "center" }}>
+            <i className="fas fa-search" style={{ marginRight: "8px", color: "#aaa" }}></i>
             No matching stocks found
           </li>
         ) : (
@@ -137,9 +151,9 @@ const WatchListItem = ({ stock }) => {
         <div className="itemInfo">
           <span className="percent">{formattedPercent}</span>
           {isDown ? (
-            <i className="fas fa-chevron-down down" style={{ fontSize: "11px", margin: "0 4px" }}></i>
+            <i className="fas fa-caret-down down" style={{ fontSize: "13px", margin: "0 3px", color: "#df514c" }}></i>
           ) : (
-            <i className="fas fa-chevron-up up" style={{ fontSize: "11px", margin: "0 4px" }}></i>
+            <i className="fas fa-caret-up up" style={{ fontSize: "13px", margin: "0 3px", color: "#4caf50" }}></i>
           )}
           <span className="price">
             {typeof stock.price === "number"

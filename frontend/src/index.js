@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter, Routes, Route, useNavigate } from "react-router-dom";
+import "@fortawesome/fontawesome-free/css/all.min.css";
 import "./index.css";
 import HomePage from "./landing_page/home/HomePage";
 import Signup from "./landing_page/signup/Signup";
@@ -20,8 +21,15 @@ const DashboardRedirect = () => {
     const token = localStorage.getItem("zerodha_token");
 
     if (!token) {
-      // User is not logged in -> redirect to login immediately without 404
-      navigate("/login", { replace: true });
+      // User is not logged in -> remember intended destination and redirect to login
+      sessionStorage.setItem("redirect_after_login", "/dashboard");
+      navigate("/login", {
+        replace: true,
+        state: {
+          from: "/dashboard",
+          message: "Please log in to access your Kite Trading Dashboard.",
+        },
+      });
     } else {
       // User is logged in -> redirect to dashboard with session tokens
       window.location.href = getDashboardUrl("/");

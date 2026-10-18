@@ -9,7 +9,7 @@ import Positions from "./Positions";
 import Summary from "./Summary";
 import WatchList from "./WatchList";
 import { GeneralContextProvider } from "./GeneralContext";
-
+import { getFrontendUrl } from "../config";
 
 const Dashboard = () => {
   const [mobileTab, setMobileTab] = useState("watchlist");
@@ -32,6 +32,14 @@ const Dashboard = () => {
         navigate(path);
       }
     }
+  };
+
+  const handleReturnHome = (e) => {
+    if (e) {
+      if (typeof e.preventDefault === "function") e.preventDefault();
+      if (typeof e.stopPropagation === "function") e.stopPropagation();
+    }
+    window.location.href = getFrontendUrl();
   };
 
   const getPageTitle = () => {
@@ -58,7 +66,7 @@ const Dashboard = () => {
       case "/holdings":
         return "fas fa-briefcase";
       case "/positions":
-        return "fas fa-chart-line";
+        return "fas fa-layer-group";
       case "/funds":
         return "fas fa-wallet";
       case "/apps":
@@ -76,7 +84,7 @@ const Dashboard = () => {
           className={`toggle-btn ${mobileTab === "watchlist" ? "active" : ""}`}
           onClick={() => setMobileTab("watchlist")}
         >
-          <i className="fas fa-bookmark" style={{ marginRight: "6px" }}></i>
+          <i className="fas fa-chart-line" style={{ marginRight: "6px" }}></i>
           Watchlist
         </button>
         <button
@@ -102,61 +110,78 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Kite-style Mobile Bottom Navigation Bar */}
+      {/* Kite-style Mobile Bottom Navigation Bar with Home */}
       <nav className="mobile-bottom-nav">
+        <a
+          href={getFrontendUrl()}
+          onClick={handleReturnHome}
+          className="bottom-nav-item home-nav-item"
+          title="Home"
+        >
+          <i className="fas fa-home" style={{ fontSize: "16px" }}></i>
+          <span>Home</span>
+        </a>
+
         <button
           className={`bottom-nav-item ${mobileTab === "watchlist" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("watchlist")}
+          title="Watchlist"
         >
-          <i className="fas fa-bookmark" style={{ fontSize: "18px" }}></i>
+          <i className="fas fa-chart-line" style={{ fontSize: "16px" }}></i>
           <span>Watchlist</span>
         </button>
 
         <button
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/")}
+          title="Dashboard Summary"
         >
-          <i className="fas fa-tachometer-alt" style={{ fontSize: "18px" }}></i>
+          <i className="fas fa-tachometer-alt" style={{ fontSize: "16px" }}></i>
           <span>Summary</span>
         </button>
 
         <button
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/orders" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/orders")}
+          title="Orders"
         >
-          <i className="fas fa-clock" style={{ fontSize: "18px" }}></i>
+          <i className="fas fa-clock" style={{ fontSize: "16px" }}></i>
           <span>Orders</span>
         </button>
 
         <button
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/holdings" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/holdings")}
+          title="Holdings"
         >
-          <i className="fas fa-briefcase" style={{ fontSize: "18px" }}></i>
+          <i className="fas fa-briefcase" style={{ fontSize: "16px" }}></i>
           <span>Holdings</span>
         </button>
 
         <button
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/positions" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/positions")}
+          title="Positions"
         >
-          <i className="fas fa-chart-line" style={{ fontSize: "18px" }}></i>
+          <i className="fas fa-layer-group" style={{ fontSize: "16px" }}></i>
           <span>Positions</span>
         </button>
 
         <button
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/funds" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/funds")}
+          title="Funds"
         >
-          <i className="fas fa-wallet" style={{ fontSize: "18px" }}></i>
+          <i className="fas fa-wallet" style={{ fontSize: "16px" }}></i>
           <span>Funds</span>
         </button>
 
         <button
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/apps" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/apps")}
+          title="Apps"
         >
-          <i className="fas fa-th-large" style={{ fontSize: "18px" }}></i>
+          <i className="fas fa-th-large" style={{ fontSize: "16px" }}></i>
           <span>Apps</span>
         </button>
       </nav>

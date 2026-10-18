@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import axios from "axios";
 import { BACKEND_URL, getDashboardUrl } from "../../config";
 
@@ -11,6 +12,12 @@ function Signup({ initialMode = "signup" }) {
   const [success, setSuccess] = useState("");
   const [loading, setLoading] = useState(false);
   const [currentUser, setCurrentUser] = useState(null);
+  const location = useLocation();
+  const notice =
+    location.state?.message ||
+    (sessionStorage.getItem("redirect_after_login")
+      ? "Please log in to access your Kite Trading Dashboard."
+      : "");
 
   useEffect(() => {
     setIsLogin(initialMode === "login");
@@ -47,8 +54,11 @@ function Signup({ initialMode = "signup" }) {
           setCurrentUser(res.data.user);
           setSuccess("Login successful! Redirecting to Dashboard...");
 
+          const targetSubPath = sessionStorage.getItem("redirect_after_login") || "/";
+          sessionStorage.removeItem("redirect_after_login");
+
           setTimeout(() => {
-            window.location.href = getDashboardUrl("/");
+            window.location.href = getDashboardUrl(targetSubPath);
           }, 1000);
         }
       } else {
@@ -71,8 +81,11 @@ function Signup({ initialMode = "signup" }) {
           setCurrentUser(res.data.user);
           setSuccess("Account created successfully! Redirecting to Dashboard...");
 
+          const targetSubPath = sessionStorage.getItem("redirect_after_login") || "/";
+          sessionStorage.removeItem("redirect_after_login");
+
           setTimeout(() => {
-            window.location.href = getDashboardUrl("/");
+            window.location.href = getDashboardUrl(targetSubPath);
           }, 1000);
         }
       }
@@ -195,6 +208,17 @@ function Signup({ initialMode = "signup" }) {
                     Log In
                   </button>
                 </div>
+
+                {notice && !error && !success && (
+                  <div
+                    className="alert alert-info py-2 fs-6 d-flex align-items-center"
+                    role="alert"
+                    style={{ fontSize: "13px" }}
+                  >
+                    <i className="fas fa-info-circle me-2"></i>
+                    <span>{notice}</span>
+                  </div>
+                )}
 
                 {error && (
                   <div className="alert alert-danger py-2 fs-6" role="alert">

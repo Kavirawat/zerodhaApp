@@ -8,6 +8,18 @@ const Home = () => {
   const [checkingAuth, setCheckingAuth] = useState(true);
 
   useEffect(() => {
+    // 0. Sanitize stale localhost values when running in production
+    const isProduction =
+      typeof window !== "undefined" &&
+      !window.location.hostname.includes("localhost") &&
+      !window.location.hostname.includes("127.0.0.1") &&
+      !window.location.hostname.startsWith("192.168.");
+
+    const existingFrontend = localStorage.getItem("zerodha_frontend_url");
+    if (isProduction && existingFrontend && (existingFrontend.includes("localhost") || existingFrontend.includes("127.0.0.1"))) {
+      localStorage.removeItem("zerodha_frontend_url");
+    }
+
     // 1. Check if token or frontend origin was provided in the URL
     const urlParams = new URLSearchParams(window.location.search);
     const tokenFromUrl = urlParams.get("token");
@@ -16,7 +28,10 @@ const Home = () => {
 
     if (frontendFromUrl) {
       try {
-        localStorage.setItem("zerodha_frontend_url", decodeURIComponent(frontendFromUrl));
+        const decoded = decodeURIComponent(frontendFromUrl);
+        if (!isProduction || (!decoded.includes("localhost") && !decoded.includes("127.0.0.1"))) {
+          localStorage.setItem("zerodha_frontend_url", decoded);
+        }
       } catch (e) {
         console.error("Error saving frontend URL:", e);
       }

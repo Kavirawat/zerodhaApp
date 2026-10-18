@@ -75,6 +75,7 @@ function Navbar() {
     setIsProfileOpen(false);
     const token = localStorage.getItem("zerodha_token");
     if (!token || !currentUser) {
+      sessionStorage.setItem("redirect_after_login", subPath);
       window.location.href = "/login";
       return;
     }
