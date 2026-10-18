@@ -15,21 +15,34 @@ function Footer() {
               &copy; 2010 - 2025, Zerodha Broking Ltd. All rights reserved.
             </p>
             <div className="d-flex gap-3 mt-3">
-              <i
-                style={{ fontSize: "28px" }}
-                className="fa fa-facebook-official text-muted"
-                aria-hidden="true"
-              ></i>
-              <i
-                style={{ fontSize: "28px" }}
-                className="fa fa-instagram text-muted"
-                aria-hidden="true"
-              ></i>
-              <i
-                style={{ fontSize: "28px" }}
-                className="fa fa-linkedin text-muted"
-                aria-hidden="true"
-              ></i>
+              <a href="https://facebook.com" target="_blank" rel="noreferrer" style={{ color: "inherit" }}>
+                <i
+                  style={{ fontSize: "22px" }}
+                  className="fab fa-facebook text-muted"
+                  aria-hidden="true"
+                ></i>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noreferrer" style={{ color: "inherit" }}>
+                <i
+                  style={{ fontSize: "22px" }}
+                  className="fab fa-instagram text-muted"
+                  aria-hidden="true"
+                ></i>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noreferrer" style={{ color: "inherit" }}>
+                <i
+                  style={{ fontSize: "22px" }}
+                  className="fab fa-linkedin text-muted"
+                  aria-hidden="true"
+                ></i>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noreferrer" style={{ color: "inherit" }}>
+                <i
+                  style={{ fontSize: "22px" }}
+                  className="fab fa-twitter text-muted"
+                  aria-hidden="true"
+                ></i>
+              </a>
             </div>
           </div>
           <div className="col-6 col-sm-6 col-md-4 col-lg-2 mb-4 mb-lg-0">

@@ -20,7 +20,7 @@ function RightSection({
               style={{ textDecoration: "none", color: "#387ed1", fontWeight: 500 }}
             >
               Learn More &nbsp;
-              <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <i className="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>

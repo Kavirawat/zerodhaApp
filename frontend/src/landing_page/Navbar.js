@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { DASHBOARD_URL } from "../config";
+import { getDashboardUrl } from "../config";
 
 function Navbar() {
   const [currentUser, setCurrentUser] = useState(null);
@@ -70,11 +70,15 @@ function Navbar() {
     window.location.reload();
   };
 
-  const getDashboardUrl = (subPath = "") => {
-    const token = localStorage.getItem("zerodha_token") || "";
-    const user = encodeURIComponent(localStorage.getItem("zerodha_user") || "");
-    const base = DASHBOARD_URL;
-    return `${base}${subPath}?token=${token}&user=${user}`;
+  const handleDashboardNav = (e, subPath = "/") => {
+    if (e && typeof e.preventDefault === "function") e.preventDefault();
+    setIsProfileOpen(false);
+    const token = localStorage.getItem("zerodha_token");
+    if (!token || !currentUser) {
+      window.location.href = "/login";
+      return;
+    }
+    window.location.href = getDashboardUrl(subPath);
   };
 
   const getInitials = (name) => {
@@ -154,6 +158,15 @@ function Navbar() {
             <Link to="/support" className="nav-link px-3" style={getLinkStyle("/support")}>
               Support
             </Link>
+            <a
+              href={currentUser ? getDashboardUrl("/") : "/login"}
+              onClick={(e) => handleDashboardNav(e, "/")}
+              className="nav-link px-3"
+              style={getLinkStyle("/dashboard")}
+              title="Kite Trading Dashboard"
+            >
+              Dashboard
+            </a>
 
             <div className="nav-item ms-lg-3 position-relative" ref={dropdownRef}>
               <div
@@ -226,7 +239,7 @@ function Navbar() {
                 </span>
 
                 <i
-                  className={`fa fa-chevron-${isProfileOpen ? "up" : "down"} ms-2`}
+                  className={`fas fa-chevron-${isProfileOpen ? "up" : "down"} ms-2`}
                   style={{ fontSize: "11px", color: isDarkMode ? "#aaa" : "#888" }}
                 ></i>
               </div>
@@ -339,7 +352,7 @@ function Navbar() {
                   >
                     <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
                       <i
-                        className={isDarkMode ? "fa-solid fa-sun" : "fa-solid fa-moon"}
+                        className={isDarkMode ? "fas fa-sun" : "fas fa-moon"}
                         style={{
                           fontSize: "14px",
                           color: isDarkMode ? "#f5a623" : "#5b6471",
@@ -386,7 +399,7 @@ function Navbar() {
 
                   <div className="d-flex flex-column gap-1 mb-2">
                     <a
-                      href={getDashboardUrl("/")}
+                      href={currentUser ? getDashboardUrl("/") : "/login"}
                       className="text-decoration-none py-2 px-2 rounded"
                       style={{
                         color: "#387ed1",
@@ -396,55 +409,59 @@ function Navbar() {
                         alignItems: "center",
                         backgroundColor: isDarkMode ? "#182638" : "#f5f9ff",
                         border: isDarkMode ? "1px solid #1f3d63" : "none",
+                        cursor: "pointer",
                       }}
-                      onClick={() => setIsProfileOpen(false)}
+                      onClick={(e) => handleDashboardNav(e, "/")}
                     >
-                      <i className="fa fa-chart-line me-2" style={{ width: "18px" }}></i>
+                      <i className="fas fa-chart-line me-2" style={{ width: "18px" }}></i>
                       Open Kite Dashboard
                     </a>
 
                     <a
-                      href={getDashboardUrl("/holdings")}
+                      href={currentUser ? getDashboardUrl("/holdings") : "/login"}
                       className="text-decoration-none py-2 px-2 rounded"
                       style={{
                         fontSize: "13px",
                         display: "flex",
                         alignItems: "center",
                         color: isDarkMode ? "#ccc" : "#6c757d",
+                        cursor: "pointer",
                       }}
-                      onClick={() => setIsProfileOpen(false)}
+                      onClick={(e) => handleDashboardNav(e, "/holdings")}
                     >
-                      <i className="fa fa-briefcase me-2" style={{ width: "18px" }}></i>
+                      <i className="fas fa-briefcase me-2" style={{ width: "18px" }}></i>
                       Holdings & Portfolio
                     </a>
 
                     <a
-                      href={getDashboardUrl("/orders")}
+                      href={currentUser ? getDashboardUrl("/orders") : "/login"}
                       className="text-decoration-none py-2 px-2 rounded"
                       style={{
                         fontSize: "13px",
                         display: "flex",
                         alignItems: "center",
                         color: isDarkMode ? "#ccc" : "#6c757d",
+                        cursor: "pointer",
                       }}
-                      onClick={() => setIsProfileOpen(false)}
+                      onClick={(e) => handleDashboardNav(e, "/orders")}
                     >
-                      <i className="fa fa-clock-rotate-left me-2" style={{ width: "18px" }}></i>
+                      <i className="fas fa-history me-2" style={{ width: "18px" }}></i>
                       Orders History
                     </a>
 
                     <a
-                      href={getDashboardUrl("/funds")}
+                      href={currentUser ? getDashboardUrl("/funds") : "/login"}
                       className="text-decoration-none py-2 px-2 rounded"
                       style={{
                         fontSize: "13px",
                         display: "flex",
                         alignItems: "center",
                         color: isDarkMode ? "#ccc" : "#6c757d",
+                        cursor: "pointer",
                       }}
-                      onClick={() => setIsProfileOpen(false)}
+                      onClick={(e) => handleDashboardNav(e, "/funds")}
                     >
-                      <i className="fa fa-wallet me-2" style={{ width: "18px" }}></i>
+                      <i className="fas fa-wallet me-2" style={{ width: "18px" }}></i>
                       Funds & Margin
                     </a>
                   </div>
@@ -463,9 +480,10 @@ function Navbar() {
                         borderRadius: "6px",
                         display: "flex",
                         alignItems: "center",
+                        cursor: "pointer",
                       }}
                     >
-                      <i className="fa fa-arrow-right-from-bracket me-2" style={{ width: "18px" }}></i>
+                      <i className="fas fa-sign-out-alt me-2" style={{ width: "18px" }}></i>
                       Log Out
                     </button>
                   ) : (

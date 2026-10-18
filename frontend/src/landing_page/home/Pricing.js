@@ -20,7 +20,7 @@ function Pricing() {
             <div className="col-12 col-sm-4">
               <div className="border p-3 rounded h-100 d-flex flex-column justify-content-center">
                 <h1 className="mb-2 fs-2">
-                  <i className="fa fa-inr me-1" aria-hidden="true"></i>0
+                  <i className="fas fa-rupee-sign me-1" aria-hidden="true"></i>0
                 </h1>
                 <p className="text-muted small mb-0">Free account opening</p>
               </div>
@@ -28,7 +28,7 @@ function Pricing() {
             <div className="col-12 col-sm-4">
               <div className="border p-3 rounded h-100 d-flex flex-column justify-content-center">
                 <h1 className="mb-2 fs-2">
-                  <i className="fa fa-inr me-1" aria-hidden="true"></i>0
+                  <i className="fas fa-rupee-sign me-1" aria-hidden="true"></i>0
                 </h1>
                 <p className="text-muted small mb-0">Free equity delivery and direct mutual funds</p>
               </div>
@@ -36,7 +36,7 @@ function Pricing() {
             <div className="col-12 col-sm-4">
               <div className="border p-3 rounded h-100 d-flex flex-column justify-content-center">
                 <h1 className="mb-2 fs-2">
-                  <i className="fa fa-inr me-1" aria-hidden="true"></i>20
+                  <i className="fas fa-rupee-sign me-1" aria-hidden="true"></i>20
                 </h1>
                 <p className="text-muted small mb-0">Intraday and F&O</p>
               </div>

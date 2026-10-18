@@ -10,13 +10,6 @@ import Summary from "./Summary";
 import WatchList from "./WatchList";
 import { GeneralContextProvider } from "./GeneralContext";
 
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import AccessTimeOutlinedIcon from "@mui/icons-material/AccessTimeOutlined";
-import BusinessCenterOutlinedIcon from "@mui/icons-material/BusinessCenterOutlined";
-import ShowChartOutlinedIcon from "@mui/icons-material/ShowChartOutlined";
-import AccountBalanceWalletOutlinedIcon from "@mui/icons-material/AccountBalanceWalletOutlined";
-import AppsOutlinedIcon from "@mui/icons-material/AppsOutlined";
 
 const Dashboard = () => {
   const [mobileTab, setMobileTab] = useState("watchlist");
@@ -58,6 +51,23 @@ const Dashboard = () => {
     }
   };
 
+  const getPageIcon = () => {
+    switch (location.pathname) {
+      case "/orders":
+        return "fas fa-clock";
+      case "/holdings":
+        return "fas fa-briefcase";
+      case "/positions":
+        return "fas fa-chart-line";
+      case "/funds":
+        return "fas fa-wallet";
+      case "/apps":
+        return "fas fa-th-large";
+      default:
+        return "fas fa-tachometer-alt";
+    }
+  };
+
   return (
     <GeneralContextProvider>
       {/* Mobile Top Segmented Toggle */}
@@ -66,13 +76,15 @@ const Dashboard = () => {
           className={`toggle-btn ${mobileTab === "watchlist" ? "active" : ""}`}
           onClick={() => setMobileTab("watchlist")}
         >
-          📋 Watchlist
+          <i className="fas fa-bookmark" style={{ marginRight: "6px" }}></i>
+          Watchlist
         </button>
         <button
           className={`toggle-btn ${mobileTab === "content" ? "active" : ""}`}
           onClick={() => setMobileTab("content")}
         >
-          📊 {getPageTitle()}
+          <i className={getPageIcon()} style={{ marginRight: "6px" }}></i>
+          {getPageTitle()}
         </button>
       </div>
 
@@ -96,7 +108,7 @@ const Dashboard = () => {
           className={`bottom-nav-item ${mobileTab === "watchlist" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("watchlist")}
         >
-          <FormatListBulletedIcon style={{ fontSize: "20px" }} />
+          <i className="fas fa-bookmark" style={{ fontSize: "18px" }}></i>
           <span>Watchlist</span>
         </button>
 
@@ -104,7 +116,7 @@ const Dashboard = () => {
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/")}
         >
-          <HomeOutlinedIcon style={{ fontSize: "20px" }} />
+          <i className="fas fa-tachometer-alt" style={{ fontSize: "18px" }}></i>
           <span>Summary</span>
         </button>
 
@@ -112,7 +124,7 @@ const Dashboard = () => {
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/orders" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/orders")}
         >
-          <AccessTimeOutlinedIcon style={{ fontSize: "20px" }} />
+          <i className="fas fa-clock" style={{ fontSize: "18px" }}></i>
           <span>Orders</span>
         </button>
 
@@ -120,7 +132,7 @@ const Dashboard = () => {
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/holdings" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/holdings")}
         >
-          <BusinessCenterOutlinedIcon style={{ fontSize: "20px" }} />
+          <i className="fas fa-briefcase" style={{ fontSize: "18px" }}></i>
           <span>Holdings</span>
         </button>
 
@@ -128,7 +140,7 @@ const Dashboard = () => {
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/positions" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/positions")}
         >
-          <ShowChartOutlinedIcon style={{ fontSize: "20px" }} />
+          <i className="fas fa-chart-line" style={{ fontSize: "18px" }}></i>
           <span>Positions</span>
         </button>
 
@@ -136,7 +148,7 @@ const Dashboard = () => {
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/funds" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/funds")}
         >
-          <AccountBalanceWalletOutlinedIcon style={{ fontSize: "20px" }} />
+          <i className="fas fa-wallet" style={{ fontSize: "18px" }}></i>
           <span>Funds</span>
         </button>
 
@@ -144,7 +156,7 @@ const Dashboard = () => {
           className={`bottom-nav-item ${mobileTab === "content" && location.pathname === "/apps" ? "active" : ""}`}
           onClick={() => handleMobileNavClick("content", "/apps")}
         >
-          <AppsOutlinedIcon style={{ fontSize: "20px" }} />
+          <i className="fas fa-th-large" style={{ fontSize: "18px" }}></i>
           <span>Apps</span>
         </button>
       </nav>

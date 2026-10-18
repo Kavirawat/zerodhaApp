@@ -10,9 +10,9 @@ function Hero() {
         </h3>
         <p className="text-muted">
           Check out our{" "}
-          <a href="#" style={{ textDecoration: "none", color: "#387ed1", fontWeight: 500 }}>
+          <a href="/pricing" style={{ textDecoration: "none", color: "#387ed1", fontWeight: 500 }}>
             investment offerings &nbsp;
-            <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+            <i className="fas fa-arrow-right" aria-hidden="true"></i>
           </a>
         </p>
       </div>

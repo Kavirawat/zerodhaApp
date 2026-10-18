@@ -46,6 +46,7 @@ const Summary = () => {
 
       <div className="section">
         <span>
+          <i className="fas fa-coins" style={{ marginRight: "10px", color: "#387ed1", fontSize: "16px" }}></i>
           <p>Equity</p>
         </span>
 
@@ -70,6 +71,7 @@ const Summary = () => {
 
       <div className="section">
         <span>
+          <i className="fas fa-briefcase" style={{ marginRight: "10px", color: "#387ed1", fontSize: "16px" }}></i>
           <p>Holdings ({holdings.length})</p>
         </span>
 

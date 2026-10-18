@@ -34,11 +34,11 @@ function Stats() {
           <div className="d-flex flex-wrap justify-content-center gap-3 gap-md-4">
             <a href="/products" style={{ textDecoration: "none", color: "#387ed1", fontWeight: 500 }}>
               Explore our products &nbsp;
-              <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <i className="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
-            <a href="#" style={{ textDecoration: "none", color: "#387ed1", fontWeight: 500 }}>
+            <a href="/dashboard" style={{ textDecoration: "none", color: "#387ed1", fontWeight: 500 }}>
               Try Kite demo &nbsp;
-              <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <i className="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
         </div>

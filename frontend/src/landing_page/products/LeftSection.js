@@ -25,7 +25,7 @@ function LeftSection({
               {...(tryDemo.startsWith("http") && !tryDemo.includes("localhost") ? { target: "_blank", rel: "noreferrer" } : {})}
             >
               Try Demo &nbsp;
-              <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <i className="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
             <a
               href={learnMore}
@@ -34,7 +34,7 @@ function LeftSection({
               style={{ textDecoration: "none", color: "#387ed1", fontWeight: 500 }}
             >
               Learn More &nbsp;
-              <i className="fa fa-long-arrow-right" aria-hidden="true"></i>
+              <i className="fas fa-arrow-right" aria-hidden="true"></i>
             </a>
           </div>
           <div className="d-flex flex-wrap gap-3 align-items-center">

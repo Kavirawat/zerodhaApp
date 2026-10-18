@@ -2,12 +2,6 @@ import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 import GeneralContext from "./GeneralContext";
 import { Tooltip, Grow } from "@mui/material";
-import {
-  BarChartOutlined,
-  KeyboardArrowDown,
-  KeyboardArrowUp,
-  MoreHoriz,
-} from "@mui/icons-material";
 import { DoughnutChart } from "./DoughnoutChart";
 import { BACKEND_URL } from "../config";
 
@@ -143,9 +137,9 @@ const WatchListItem = ({ stock }) => {
         <div className="itemInfo">
           <span className="percent">{formattedPercent}</span>
           {isDown ? (
-            <KeyboardArrowDown className="down" />
+            <i className="fas fa-chevron-down down" style={{ fontSize: "11px", margin: "0 4px" }}></i>
           ) : (
-            <KeyboardArrowUp className="up" />
+            <i className="fas fa-chevron-up up" style={{ fontSize: "11px", margin: "0 4px" }}></i>
           )}
           <span className="price">
             {typeof stock.price === "number"
@@ -197,12 +191,12 @@ const WatchListActions = ({ uid, price }) => {
           TransitionComponent={Grow}
         >
           <button className="action">
-            <BarChartOutlined className="icon" />
+            <i className="fas fa-chart-bar icon" style={{ fontSize: "13px" }}></i>
           </button>
         </Tooltip>
         <Tooltip title="More" placement="top" arrow TransitionComponent={Grow}>
           <button className="action">
-            <MoreHoriz className="icon" />
+            <i className="fas fa-ellipsis-h icon" style={{ fontSize: "13px" }}></i>
           </button>
         </Tooltip>
       </span>

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BACKEND_URL, DASHBOARD_URL } from "../../config";
+import { BACKEND_URL, getDashboardUrl } from "../../config";
 
 function Signup({ initialMode = "signup" }) {
   const [isLogin, setIsLogin] = useState(initialMode === "login");
@@ -48,8 +48,7 @@ function Signup({ initialMode = "signup" }) {
           setSuccess("Login successful! Redirecting to Dashboard...");
 
           setTimeout(() => {
-            const encodedUser = encodeURIComponent(JSON.stringify(res.data.user));
-            window.location.href = `${DASHBOARD_URL}?token=${res.data.token}&user=${encodedUser}`;
+            window.location.href = getDashboardUrl("/");
           }, 1000);
         }
       } else {
@@ -73,8 +72,7 @@ function Signup({ initialMode = "signup" }) {
           setSuccess("Account created successfully! Redirecting to Dashboard...");
 
           setTimeout(() => {
-            const encodedUser = encodeURIComponent(JSON.stringify(res.data.user));
-            window.location.href = `${DASHBOARD_URL}?token=${res.data.token}&user=${encodedUser}`;
+            window.location.href = getDashboardUrl("/");
           }, 1000);
         }
       }
@@ -98,9 +96,7 @@ function Signup({ initialMode = "signup" }) {
   };
 
   const goToDashboard = () => {
-    const token = localStorage.getItem("zerodha_token") || "";
-    const user = encodeURIComponent(localStorage.getItem("zerodha_user") || "");
-    window.location.href = `${DASHBOARD_URL}?token=${token}&user=${user}`;
+    window.location.href = getDashboardUrl("/");
   };
 
   return (
@@ -157,14 +153,14 @@ function Signup({ initialMode = "signup" }) {
                   className="btn btn-primary w-100 py-2 mb-3"
                   style={{ backgroundColor: "#387ed1", borderColor: "#387ed1", fontWeight: 500 }}
                 >
-                  🚀 Go to Kite Dashboard
+                  <i className="fas fa-chart-line me-2"></i> Go to Kite Dashboard
                 </button>
 
                 <button
                   onClick={handleLogout}
                   className="btn btn-outline-danger w-100 py-2"
                 >
-                  Log Out
+                  <i className="fas fa-sign-out-alt me-2"></i> Log Out
                 </button>
               </div>
             ) : (

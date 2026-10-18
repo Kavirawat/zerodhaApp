@@ -7,7 +7,7 @@ const Apps = () => {
       name: "Console",
       tagline: "Backoffice & Reporting",
       category: "Analytics & P&L",
-      icon: "📊",
+      icon: "fas fa-chart-pie",
       color: "#ff5722",
       description:
         "The central dashboard for your Zerodha account. Track multi-year tax P&L statements, tradebook history, ledger, dividends, and portfolio analytics.",
@@ -19,7 +19,7 @@ const Apps = () => {
       name: "Coin",
       tagline: "Direct Mutual Funds",
       category: "Mutual Funds & SIP",
-      icon: "🪙",
+      icon: "fas fa-coins",
       color: "#00b0ff",
       description:
         "Buy zero-commission direct mutual funds directly in your Demat account without distributor fees. Set up flexible SIPs with instant UPI mandates.",
@@ -31,7 +31,7 @@ const Apps = () => {
       name: "Varsity",
       tagline: "Stock Market Education",
       category: "Education",
-      icon: "🎓",
+      icon: "fas fa-graduation-cap",
       color: "#4caf50",
       description:
         "Comprehensive, in-depth stock market and financial education with 10+ free modules covering technical analysis, fundamentals, options, and currency trading.",
@@ -43,7 +43,7 @@ const Apps = () => {
       name: "Kite Connect API",
       tagline: "Developer Trading APIs",
       category: "Algo & API",
-      icon: "⚡",
+      icon: "fas fa-bolt",
       color: "#3f51b5",
       description:
         "Fast, reliable HTTP/JSON REST APIs for developers to automate trades, query live market tick data, manage orders, and build full trading applications.",
@@ -55,7 +55,7 @@ const Apps = () => {
       name: "Sensibull",
       tagline: "Options Trading Platform",
       category: "Derivatives",
-      icon: "📈",
+      icon: "fas fa-chart-area",
       color: "#e91e63",
       description:
         "India's largest options trading platform. Build ready-made options strategies, analyze Greeks, track open interest (OI), and simulate payoff graphs.",
@@ -67,7 +67,7 @@ const Apps = () => {
       name: "Smallcase",
       tagline: "Thematic Portfolios",
       category: "Thematic Investing",
-      icon: "💼",
+      icon: "fas fa-briefcase",
       color: "#009688",
       description:
         "Curated baskets of stocks and ETFs that represent an idea, market trend, or financial strategy, professionally managed by SEBI registered research analysts.",
@@ -79,7 +79,7 @@ const Apps = () => {
       name: "Streak",
       tagline: "Algo Trading Without Code",
       category: "Algo Trading",
-      icon: "⚡",
+      icon: "fas fa-robot",
       color: "#ff9800",
       description:
         "Create, backtest, and deploy algorithmic trading strategies without writing any code. Receive real-time entry and exit alerts on mobile and web.",
@@ -91,7 +91,7 @@ const Apps = () => {
       name: "GoldenPi",
       tagline: "Bonds & Fixed Income",
       category: "Fixed Income",
-      icon: "🏛️",
+      icon: "fas fa-university",
       color: "#795548",
       description:
         "Discover, research, and invest in corporate bonds, non-convertible debentures (NCDs), and sovereign debt with predictable, fixed annual returns.",
@@ -102,13 +102,12 @@ const Apps = () => {
 
   return (
     <div style={{ padding: "0 20px 40px" }}>
-      
-      <div style={{ marginBottom: "25px" }}>
-        <h2 className="ecosystem-header-title" style={{ fontSize: "24px", fontWeight: 700, margin: "0 0 6px 0", color: "#333" }}>
+      <div style={{ marginBottom: "24px" }}>
+        <h2 style={{ fontSize: "22px", fontWeight: 700, margin: "0 0 6px 0", color: "#333" }}>
           Zerodha Ecosystem Apps
         </h2>
-        <p className="ecosystem-header-subtitle" style={{ margin: 0, color: "#666", fontSize: "14px" }}>
-          Seamless partner platforms and specialized trading tools integrated with your Zerodha account
+        <p style={{ fontSize: "14px", color: "#666", margin: 0 }}>
+          Explore our suite of specialized trading, analytics, education, and investment platforms.
         </p>
       </div>
 
@@ -122,10 +121,10 @@ const Apps = () => {
         {ecosystemApps.map((app) => (
           <div
             key={app.id}
-            className="ecosystem-card"
+            className="app-card"
             style={{
-              background: "#fff",
-              border: "1px solid #eef0f3",
+              backgroundColor: "#fff",
+              border: "1px solid #e0e0e0",
               borderRadius: "10px",
               padding: "20px",
               display: "flex",
@@ -136,7 +135,6 @@ const Apps = () => {
             }}
           >
             <div>
-              
               <div style={{ display: "flex", alignItems: "center", marginBottom: "12px" }}>
                 <div
                   style={{
@@ -147,11 +145,12 @@ const Apps = () => {
                     display: "flex",
                     alignItems: "center",
                     justifyContent: "center",
-                    fontSize: "22px",
+                    fontSize: "20px",
                     marginRight: "12px",
+                    color: app.color,
                   }}
                 >
-                  {app.icon}
+                  <i className={app.icon}></i>
                 </div>
                 <div>
                   <h3 style={{ fontSize: "17px", fontWeight: 700, margin: 0, color: "#222" }}>
@@ -178,9 +177,12 @@ const Apps = () => {
                       color: "#555",
                       padding: "3px 8px",
                       borderRadius: "4px",
+                      display: "inline-flex",
+                      alignItems: "center",
                     }}
                   >
-                    ✓ {f}
+                    <i className="fas fa-check" style={{ fontSize: "9px", marginRight: "4px", color: "#387ed1" }}></i>
+                    {f}
                   </span>
                 ))}
               </div>
@@ -192,8 +194,9 @@ const Apps = () => {
               rel="noreferrer"
               className="app-btn"
               style={{
-                display: "block",
-                textAlign: "center",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 padding: "9px 14px",
                 backgroundColor: "#f5f9ff",
                 color: "#387ed1",
@@ -205,7 +208,8 @@ const Apps = () => {
                 transition: "all 0.2s ease",
               }}
             >
-              Launch {app.name} ↗
+              <span>Launch {app.name}</span>
+              <i className="fas fa-external-link-alt" style={{ fontSize: "11px", marginLeft: "6px" }}></i>
             </a>
           </div>
         ))}

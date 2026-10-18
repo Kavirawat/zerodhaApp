@@ -57,10 +57,14 @@ const Orders = () => {
             borderRadius: "4px",
             padding: "6px 14px",
             cursor: "pointer",
-            fontSize: "13px"
+            fontSize: "13px",
+            display: "inline-flex",
+            alignItems: "center",
+            gap: "6px"
           }}
         >
-          ↻ Refresh
+          <i className="fas fa-sync-alt" style={{ fontSize: "12px" }}></i>
+          <span>Refresh</span>
         </button>
       </div>
 

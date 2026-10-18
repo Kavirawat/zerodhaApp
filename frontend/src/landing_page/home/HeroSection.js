@@ -55,7 +55,7 @@ function Hero() {
                 fontWeight: 500,
               }}
             >
-              🚀 Open Kite Dashboard
+              <i className="fas fa-chart-line me-2"></i> Open Kite Dashboard
             </a>
           ) : (
             <Link
